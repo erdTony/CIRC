@@ -10,26 +10,25 @@ for research and development of EclipseIR's facial recognition engine.
 * [Users](CIRCnetUsers)
 
 ## Ubuntu Studio
-  * [Installation](UbuStudInstall)
-  * [BaseLine](UbuStudBaseLine)
+
+* [Installation](UbuStudInstall)
+* [BaseLine](UbuStudBaseLine)
 
 ## Hales VM Server
 
 * [Network Setup](HalesNetwork)
   * Fixed IP Address
   * OpenSSH & UFW (Firewall)
-  * [RustDesk Server](HalesRustServer)
   * Attach 1TB Share
   * SMBD & NFS Access
 
 ## Hussets UbuStud DevVM
-  * [Installation](HussInstall)
-  
+
+* [Installation](HussInstall)
 
 ## Hangtown Win11 DevVM
 
 * [Installation](HangInstall)
-
 
 ## Alphabetical
 
@@ -38,4 +37,4 @@ for research and development of EclipseIR's facial recognition engine.
 * [Installation](UbuStudInstall), Ubuntu Studio
 * [Network Setup](HalesNetwork), Hales
 * [RustDesk Server](HalesRustServer), Hales
-* [Users](CIRCnetUsers), CIRCnet
+* [Users&Groups](UsersGroups.md), CIRCnet

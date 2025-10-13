@@ -1,5 +1,7 @@
 ## EIRC CIRC Wiki
+
 [Home](Home)
+
 # Hales Network Setup
 
 ## Fixed IP Addresses
@@ -11,11 +13,16 @@ The remainder will be set by the fixed DHCP records on the BEC Router.
 For Hales-itself (and other Ubuntu-based hosts):
 
 * $ `ip a` _to list the network interfaces_
+
 * $ `cd /etc/netplan` _look for a network configuration file_
+
 * $ `sudo cp 01-network-manager-all.yaml 01-network-manager-all.yaml.000` _back it up_
+
 * $ `sudo nano 01-network-manager-all.yaml`
+
 * Enter the text below: **Indentation is important**
-```
+  
+  ```
     network:
       version: 2
       renderer: networkd
@@ -26,8 +33,10 @@ For Hales-itself (and other Ubuntu-based hosts):
           gateway4: 192.168.2.1 # Your router's IP
           nameservers:
             addresses: [192.168.2.1, 8.8.8.8, 8.8.4.4] # DNS server IPs
-```
+  ```
+
 * $ `sudo netplan apply`
+
 * $ 'ip a' # to test
 
 _NOTE: Gateway4 is depricated. Address as a Default Route instead_
@@ -63,18 +72,25 @@ Try on another *nix/*BSD system:
 ## SMBD & NFS Sharing
 
 * $ `sudo apt install samba acl`
+
 * $ `cd /etc/samba`
+
 * $ `sudo cp smb.conf smb.conf.001`
+
 * $ `sudo nano smb.conf`
+
 * Change: `workgroup = CIRCnet`
+
 * Add:
-```
-[local1A]
+  
+  ```
+  [local1A]
   comment = Samba on Hales Ubuntu Host
   path = /mnt/USB1TShareA
   readonly = no
   browsable = yes
-```
+  ```
+
 * Save smb.conf
 
 ### SMB Users
@@ -87,7 +103,6 @@ Reference:  https://snapcraft.io/gitkraken
 
 * $ `sudo snap install gitkraken --classic`
 
- 
 ## RustDesk Client
 
 * Download `rustdesk-v#.#.#-x86_64.deb` from [github](`https://github.com/rustdesk/rustdesk/releases`)
@@ -96,5 +111,3 @@ Reference:  https://snapcraft.io/gitkraken
   * Click &#8942;, Select Security tab, and press Unlock Security
   * Select Permanent Password and enter password & confirmation: CIRChales7
   * Back to Home, Note ID `530 850 204`
-
-
